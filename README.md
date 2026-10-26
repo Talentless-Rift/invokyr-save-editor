@@ -193,6 +193,20 @@ Unofficial and not affiliated with Ludogram. Contains no game code or assets, on
 format knowledge needed to read and write a save file. Use it on your own saves, back them
 up first.
 
+## Reuse and maintenance
+
+Take it. Fork it, ship it inside your own tool, sell it, relicense your fork, strip it for
+parts. The only condition MIT puts on you is that the copyright line and the license text
+travel with the copy.
+
+This is a finished **0.1.0**, not a service:
+
+* If a game patch breaks it, the fix is usually a small change to the values in
+  [docs/FORMAT.md](docs/FORMAT.md) — issues are welcome but there is no SLA, and a report may
+  sit unanswered. Forks are the intended path, not a last resort.
+* Pull requests get the same deal: appreciated, reviewed when there is time.
+* No warranty and no liability. The [LICENSE](LICENSE) says it and this section means it.
+
 ## License
 
 MIT — see [LICENSE](LICENSE).
