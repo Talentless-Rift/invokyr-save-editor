@@ -38,9 +38,9 @@ shows the same state.
 
 ## Run
 
-**No Python installed?** Grab `InvokyrSaveEditor-0.1.0-win64.zip` from the releases page and
-run `InvokyrSaveEditor.exe` — one file, nothing to install. It is the same program, built
-with PyInstaller.
+**No Python installed?** Grab `InvokyrSaveEditor-0.1.0-win64.zip` from the
+[releases page](../../releases) and run `InvokyrSaveEditor.exe` — one file, nothing to
+install. It is the same program, built with PyInstaller.
 
 From source, double-click **`Invokyr Save Editor.bat`** (it prefers `pythonw`, so no console
 window), or:
