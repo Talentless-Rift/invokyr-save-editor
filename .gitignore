@@ -1,0 +1,18 @@
+# save files are personal: they carry SteamIDs and your run state
+*.sav
+*.sav.tmp
+
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# local scratch
+out/
+work/
+_smoke/
+
+# exe build
+build/
+dist/
+*.spec

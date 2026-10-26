@@ -1,0 +1,32 @@
+{
+  "save.gameRoomTools.itemStringIds": [
+    "dice_antigravity", "dice_antigravity",
+    "dice_chaos2", "dice_chaos2",
+    "dice_cocoon", "dice_cocoon",
+    "dice_cocoonfire",
+    "dice_gather", "dice_gather",
+    "dice_heal", "dice_heal", "dice_heal",
+    "dice_light",
+    "dice_revive", "dice_revive",
+    "dice_scanner",
+    "dice_tp", "dice_tp",
+    "g_fire", "g_hgun", "g_mobradar", "g_mask",
+    "lantern", "lantern"
+  ],
+  "save.gameRoomTools.itemBatteryLevels": [
+    -1, -1,
+    -1, -1,
+    -1, -1,
+    -1,
+    -1, -1,
+    -1, -1, -1,
+    -1,
+    -1, -1,
+    -1,
+    -1, -1,
+    -1, -1, -1, -1,
+    -1, -1
+  ],
+  "save.playerInventories[0].itemStringIds": ["dice_heal", "g_mask"],
+  "save.playerInventories[0].itemBatteryLevels": [-1, -1]
+}
