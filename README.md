@@ -1,5 +1,8 @@
 # Invokyr Save Editor
 
+**This code is AI-generated (vibecoded) — see [How this was made](#how-this-was-made).**
+Tested against Steam build `26154962` — see [Verified against](#verified-against).
+
 An unofficial, dependency-free save editor for **Invokyr** (Ludogram). Reads and writes
 `.sav` files directly — no game install access, no memory patching, no launcher.
 
@@ -98,9 +101,43 @@ Steam and are not in the save at all.
 
 ## Verified against
 
-Save format **version 15**, current PC build (Steam). The item ids, upgrade caps and garage
-data were read out of the game's own addressables bundles; every field in
-[docs/FORMAT.md](docs/FORMAT.md) was checked against real saves.
+| | |
+|---|---|
+| Game | Invokyr **0.44.14**, Steam appid `3883570` |
+| Steam build | **`26154962`** (last updated 2026-10-23 10:57 UTC) |
+| Engine | Unity 6000.3.14f1 |
+| Save format | `version` 15 |
+| Tested on | Windows 11 64-bit (10.0.26100), 2026-10-26 |
+| Distribution | Steam (PC). No other store or platform was tested. |
+
+The version string is the `bundleVersion` from `Invokyr_Data/globalgamemanagers`
+(`0.44.14`), and it matches Ludogram's "Patch V0.44.14" announcement, posted about two hours
+before that depot update. The build id and update time come from `appmanifest_3883570.acf`.
+
+Everything below — the field map, the 43 item ids, the upgrade caps, the garage data — was
+read out of that build's own addressables bundles, and edited saves were loaded in that build
+on that machine. A different build can rename items, change the field set or bump the save
+version: run `python invokyr_save.py check "<your save>"` first, and if a slot refuses to
+load, assume the build moved rather than the save being broken.
+
+## How this was made
+
+**Every line of code here was written by an AI agent — DeepSeek — from a human operator's
+direction.** That is worth saying plainly, because it changes how you should read this repo:
+
+* The format knowledge is evidence-backed, not guessed. Each field was confirmed by
+  re-encoding real saves byte for byte (`python invokyr_save.py check`) and by loading edited
+  saves in the game. Where something could not be confirmed — money above 32767, key doors —
+  it is marked as untested in [Known limits](#known-limits).
+* The code itself has not been reviewed line by line by a human, and the usual "someone
+  would have caught that" argument does not apply. It is plain Python with no dependencies
+  and no build step, about 2 000 lines, so it can be read in an afternoon.
+* The blast radius is small on purpose: it opens one file you choose, writes files next to
+  it, keeps a timestamped backup, and verifies what it wrote. It has no network access, no
+  installer, no background process and no elevation.
+
+If you find a claim below that the code or the game contradicts, that is a bug: open an
+issue with the build id and the command you ran.
 
 ## Known limits
 
@@ -138,6 +175,17 @@ python invokyr_gui.py --selftest demo.sav    # drives every widget: load, money 
 
 The selftest exits non-zero on the first failure. Against a real save it is the stronger
 test, because the encoder then has to preserve the game's own integer widths.
+
+## Credits
+
+| | |
+|---|---|
+| **Talentless-Rift** | project, direction, in-game testing, real saves, release |
+| **DeepSeek** (AI coding assistant) | save-format reverse engineering, `invokyr_save.py`, `invokyr_gui.py`, docs, tests |
+
+Every code path in this repo was produced by the AI agent named above, working from the
+human's saves and the game's own asset bundles. The game is by [Ludogram](https://store.steampowered.com/app/3883570/);
+no game code or assets are included or redistributed here.
 
 ## Disclaimer
 

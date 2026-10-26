@@ -1,8 +1,9 @@
 # Save format
 
-Everything below was derived from real saves and the game's own asset bundles, and checked
-by re-encoding: `python invokyr_save.py check <save>` re-packs all four entries and compares
-them to the original bytes, so the encoder is byte-exact for untouched data.
+Derived from **Invokyr 0.44.14** (Steam build `26154962`, Unity 6000.3.14f1, save
+`version` 15), from real saves and the game's own asset bundles. Checked by re-encoding:
+`python invokyr_save.py check <save>` re-packs all four entries and compares them to the
+original bytes, so the encoder is byte-exact for untouched data.
 
 ## Container
 
